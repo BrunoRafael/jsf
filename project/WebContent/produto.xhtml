@@ -18,8 +18,22 @@
 		<h:outputLabel value="Preço" for="preco" />
 		<h:inputText id="preco" value="#{produtoBean.produto.price}"/>
 		
-		<h:dataTable value=#{produtoBean.produtos}>
-		
+		<h:dataTable value=#{produtoBean.produtos} var="produto" >
+			
+			<h:column>
+				<f:facet name="header"> Nome </f:facet>
+				#{produto.name}
+			</h:column>
+			
+			<h:column> 
+				<f:facet name="header"> Preço </f:facet>
+				#{produto.price}
+			</h:column>
+			
+			<h:column> 
+				<f:facet name="header"> Descrição </f:facet>
+				#{produto.description}
+			</h:column>
 		
 		</h:dataTable>
 		
